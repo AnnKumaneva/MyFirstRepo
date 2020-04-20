@@ -1,0 +1,13 @@
+C:\Users\Пользователь\source\repos\ConsoleApp3_calc\ConsoleApp3_calc\bin\Debug\netcoreapp3.1\ConsoleApp3_calc.exe
+C:\Users\Пользователь\source\repos\ConsoleApp3_calc\ConsoleApp3_calc\bin\Debug\netcoreapp3.1\ConsoleApp3_calc.deps.json
+C:\Users\Пользователь\source\repos\ConsoleApp3_calc\ConsoleApp3_calc\bin\Debug\netcoreapp3.1\ConsoleApp3_calc.runtimeconfig.json
+C:\Users\Пользователь\source\repos\ConsoleApp3_calc\ConsoleApp3_calc\bin\Debug\netcoreapp3.1\ConsoleApp3_calc.runtimeconfig.dev.json
+C:\Users\Пользователь\source\repos\ConsoleApp3_calc\ConsoleApp3_calc\bin\Debug\netcoreapp3.1\ConsoleApp3_calc.dll
+C:\Users\Пользователь\source\repos\ConsoleApp3_calc\ConsoleApp3_calc\bin\Debug\netcoreapp3.1\ConsoleApp3_calc.pdb
+C:\Users\Пользователь\source\repos\ConsoleApp3_calc\ConsoleApp3_calc\obj\Debug\netcoreapp3.1\ConsoleApp3_calc.csprojAssemblyReference.cache
+C:\Users\Пользователь\source\repos\ConsoleApp3_calc\ConsoleApp3_calc\obj\Debug\netcoreapp3.1\ConsoleApp3_calc.csproj.CoreCompileInputs.cache
+C:\Users\Пользователь\source\repos\ConsoleApp3_calc\ConsoleApp3_calc\obj\Debug\netcoreapp3.1\ConsoleApp3_calc.AssemblyInfoInputs.cache
+C:\Users\Пользователь\source\repos\ConsoleApp3_calc\ConsoleApp3_calc\obj\Debug\netcoreapp3.1\ConsoleApp3_calc.AssemblyInfo.cs
+C:\Users\Пользователь\source\repos\ConsoleApp3_calc\ConsoleApp3_calc\obj\Debug\netcoreapp3.1\ConsoleApp3_calc.dll
+C:\Users\Пользователь\source\repos\ConsoleApp3_calc\ConsoleApp3_calc\obj\Debug\netcoreapp3.1\ConsoleApp3_calc.pdb
+C:\Users\Пользователь\source\repos\ConsoleApp3_calc\ConsoleApp3_calc\obj\Debug\netcoreapp3.1\ConsoleApp3_calc.genruntimeconfig.cache
