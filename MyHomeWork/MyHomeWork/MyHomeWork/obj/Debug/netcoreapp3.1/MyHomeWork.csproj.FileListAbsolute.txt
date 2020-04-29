@@ -1,0 +1,13 @@
+C:\Users\Пользователь\source\repos\MyHomeWork\MyHomeWork\obj\Debug\netcoreapp3.1\MyHomeWork.csprojAssemblyReference.cache
+C:\Users\Пользователь\source\repos\MyHomeWork\MyHomeWork\obj\Debug\netcoreapp3.1\MyHomeWork.csproj.CoreCompileInputs.cache
+C:\Users\Пользователь\source\repos\MyHomeWork\MyHomeWork\obj\Debug\netcoreapp3.1\MyHomeWork.AssemblyInfoInputs.cache
+C:\Users\Пользователь\source\repos\MyHomeWork\MyHomeWork\obj\Debug\netcoreapp3.1\MyHomeWork.AssemblyInfo.cs
+C:\Users\Пользователь\source\repos\MyHomeWork\MyHomeWork\bin\Debug\netcoreapp3.1\MyHomeWork.exe
+C:\Users\Пользователь\source\repos\MyHomeWork\MyHomeWork\bin\Debug\netcoreapp3.1\MyHomeWork.deps.json
+C:\Users\Пользователь\source\repos\MyHomeWork\MyHomeWork\bin\Debug\netcoreapp3.1\MyHomeWork.runtimeconfig.json
+C:\Users\Пользователь\source\repos\MyHomeWork\MyHomeWork\bin\Debug\netcoreapp3.1\MyHomeWork.runtimeconfig.dev.json
+C:\Users\Пользователь\source\repos\MyHomeWork\MyHomeWork\bin\Debug\netcoreapp3.1\MyHomeWork.dll
+C:\Users\Пользователь\source\repos\MyHomeWork\MyHomeWork\bin\Debug\netcoreapp3.1\MyHomeWork.pdb
+C:\Users\Пользователь\source\repos\MyHomeWork\MyHomeWork\obj\Debug\netcoreapp3.1\MyHomeWork.dll
+C:\Users\Пользователь\source\repos\MyHomeWork\MyHomeWork\obj\Debug\netcoreapp3.1\MyHomeWork.pdb
+C:\Users\Пользователь\source\repos\MyHomeWork\MyHomeWork\obj\Debug\netcoreapp3.1\MyHomeWork.genruntimeconfig.cache
