@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using System;
 using System.Threading;
 
 namespace NUnitTest_Kumaneva
@@ -21,7 +22,7 @@ namespace NUnitTest_Kumaneva
         {
             driver.FindElement(By.XPath("//input[@id=\"Name\"]")).SendKeys("user");
             driver.FindElement(By.XPath("//input[@id=\"Password\"]")).SendKeys("user");
-            Thread.Sleep(1000);
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1);
             driver.FindElement(By.XPath("//input[@type=\"submit\"]")).Click();
         }
         [Test]
@@ -37,6 +38,7 @@ namespace NUnitTest_Kumaneva
         {
             driver.FindElement(By.XPath("//div/a[@href=\"/Product\"]")).Click();
             driver.FindElement(By.XPath("//a[@class=\"btn btn-default\"]")).Click();
+
             //заполнение полей нового продукта
             driver.FindElement(By.XPath("//input[contains(@id,\"ProductName\")]")).SendKeys("Kukuruku");
             driver.FindElement(By.XPath("//select[contains(@id,\"CategoryId\")]")).FindElement(By.XPath("//select[contains(@id,\"CategoryId\")]/option[@value=\"3\"]")).Click();
@@ -48,7 +50,7 @@ namespace NUnitTest_Kumaneva
             driver.FindElement(By.XPath("//input[contains(@id,\"ReorderLevel\")] ")).SendKeys("10");
             driver.FindElement(By.XPath("//input[contains(@id,\"Discontinued\")] ")).Click();
             driver.FindElement(By.XPath("//input[@type=\"submit\"]")).Click();
-            Thread.Sleep(2000);
+            
             //ѕроверка корректности полей созданного продукта
             Assert.AreEqual("Kukuruku", driver.FindElement(By.XPath("//td[contains(a,\"Kukuruku\")]/a")).Text);
             Assert.AreEqual("Confections", driver.FindElement(By.XPath("//td[contains(a,\"Kukuruku\")]/following-sibling::td[1]")).Text);
