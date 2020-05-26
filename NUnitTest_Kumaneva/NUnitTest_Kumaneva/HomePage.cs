@@ -18,6 +18,8 @@ namespace NUnitTest_Kumaneva
 
         private IWebElement LogoutButton => driver.FindElement(By.XPath("//a[@href=\"/Account/Logout\"]"));
 
+        private IWebElement textLabel => driver.FindElement(By.XPath("//h2"));
+
         public CreateProductPage AllProductView()
         {
             AllProductsButton.Click();
@@ -28,6 +30,11 @@ namespace NUnitTest_Kumaneva
         {
             LogoutButton.Click();
             return new StartPage(driver);
+        }
+
+        public string GetText()
+        {
+            return textLabel.Text;
         }
     }
 }

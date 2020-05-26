@@ -19,6 +19,8 @@ namespace NUnitTest_Kumaneva
 
         private IWebElement LoginButton => driver.FindElement(By.XPath("//input[@type=\"submit\"]"));
 
+        private IWebElement startPageText => driver.FindElement(By.XPath("//h2"));
+
         public HomePage LoginInput(string loginNameInput, string passwordInput)
         {
             LoginNameInput.SendKeys(loginNameInput);
@@ -28,5 +30,11 @@ namespace NUnitTest_Kumaneva
             return new HomePage(driver);
             
         }
+
+        public string GetStartPageText()
+        {
+            return startPageText.Text;
+        }
+
     }
 }

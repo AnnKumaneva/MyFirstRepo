@@ -40,7 +40,7 @@ namespace NUnitTest_Kumaneva
         public void TestLogin()
         {
             
-            Assert.AreEqual("Home page", driver.FindElement(By.XPath("//h2")).Text);
+            Assert.AreEqual("Home page", homePage.GetText());
            
         }
 
@@ -53,15 +53,15 @@ namespace NUnitTest_Kumaneva
             createProductPage.InputProduct(nameProduct, costUnitPrice, numberQuantityPerUnit, numberUnitsInStock, numberUnitsOnOrder, numberReorderLevel);
             
             //Проверка корректности полей созданного продукта
-            Assert.AreEqual("Kukuruku", driver.FindElement(By.XPath("//td[contains(a,\"Kukuruku\")]/a")).Text);
-            Assert.AreEqual("Confections", driver.FindElement(By.XPath("//td[contains(a,\"Kukuruku\")]/following-sibling::td[1]")).Text);
-            Assert.AreEqual("Pasta Buttini s.r.l.", driver.FindElement(By.XPath("//td[contains(a,\"Kukuruku\")]/following-sibling::td[2]")).Text);
-            Assert.AreEqual("5-10", driver.FindElement(By.XPath("//td[contains(a,\"Kukuruku\")]/following-sibling::td[3]")).Text);
-            Assert.AreEqual("123,0000", driver.FindElement(By.XPath("//td[contains(a,\"Kukuruku\")]/following-sibling::td[4]")).Text);
-            Assert.AreEqual("6", driver.FindElement(By.XPath("//td[contains(a,\"Kukuruku\")]/following-sibling::td[5]")).Text);
-            Assert.AreEqual("2", driver.FindElement(By.XPath("//td[contains(a,\"Kukuruku\")]/following-sibling::td[6]")).Text);
-            Assert.AreEqual("10", driver.FindElement(By.XPath("//td[contains(a,\"Kukuruku\")]/following-sibling::td[7]")).Text);
-            Assert.AreEqual("True", driver.FindElement(By.XPath("//td[contains(a,\"Kukuruku\")]/following-sibling::td[8]")).Text);
+            Assert.AreEqual("Kukuruku", createProductPage.GetNameProductText());
+            Assert.AreEqual("Confections", createProductPage.GetCategoryText());
+            Assert.AreEqual("Pasta Buttini s.r.l.", createProductPage.GetSupplierText());
+            Assert.AreEqual("5-10", createProductPage.GetQuantityPerUnitText());
+            Assert.AreEqual("123,0000", createProductPage.GetUnitPriceText());
+            Assert.AreEqual("6", createProductPage.GetUnitInStockText());
+            Assert.AreEqual("2", createProductPage.GetUnitsOnOrderText());
+            Assert.AreEqual("10", createProductPage.GetReorderLevelText());
+            Assert.AreEqual("True", createProductPage.GetDiscontinuedText());
         }
 
         [Test]
@@ -69,7 +69,7 @@ namespace NUnitTest_Kumaneva
         {
 
             startPage = homePage.LogoutCheck();            
-            Assert.AreEqual("Login", driver.FindElement(By.XPath("//h2")).Text);
+            Assert.AreEqual("Login", startPage.GetStartPageText());
         }
 
         [TearDown]
