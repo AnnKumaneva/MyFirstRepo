@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -39,27 +40,12 @@ namespace NUnitTest_Kumaneva
 
         private IWebElement CreateButton => driver.FindElement(By.XPath("//input[@type=\"submit\"]"));
 
-        private IWebElement namePrdct => driver.FindElement(By.XPath("//td[contains(a,\"Kukuruku\")]/a"));
-
-        private IWebElement categoryPrdct => driver.FindElement(By.XPath("//td[contains(a,\"Kukuruku\")]/following-sibling::td[1]"));
-
-        private IWebElement supplierPrdct => driver.FindElement(By.XPath("//td[contains(a,\"Kukuruku\")]/following-sibling::td[2]"));
-
-        private IWebElement unitPricePrdct => driver.FindElement(By.XPath("//td[contains(a,\"Kukuruku\")]/following-sibling::td[4]"));
-
-        private IWebElement quantityPrdct => driver.FindElement(By.XPath("//td[contains(a,\"Kukuruku\")]/following-sibling::td[3]"));
-
-        private IWebElement unitInStockPrdct => driver.FindElement(By.XPath("//td[contains(a,\"Kukuruku\")]/following-sibling::td[5]"));
-
-        private IWebElement unitsOnOrderPrdct => driver.FindElement(By.XPath("//td[contains(a,\"Kukuruku\")]/following-sibling::td[6]"));
-
-        private IWebElement reorderLevelPrdct => driver.FindElement(By.XPath("//td[contains(a,\"Kukuruku\")]/following-sibling::td[7]"));
-
-        private IWebElement discontPrdct => driver.FindElement(By.XPath("//td[contains(a,\"Kukuruku\")]/following-sibling::td[8]"));
+        
 
         public void InputProduct(string nameProduct, string costUnitPrice, string numberQuantityPerUnit, string numberUnitsInStock, string numberUnitsOnOrder, string numberReorderLevel)
         {
-            CreateNewProductButton.Click();
+            new Actions(driver).Click(CreateNewProductButton).Build().Perform();
+            //CreateNewProductButton.Click();
             ProductNameInput.SendKeys(nameProduct);
             CategoryName.Click();
             SupplierName.Click();
@@ -70,44 +56,9 @@ namespace NUnitTest_Kumaneva
             ReorderLevelNumber.SendKeys(numberReorderLevel);
             DiscontinuedTrue.Click();
 
-            CreateButton.Click();
+            new Actions(driver).Click(CreateButton).Build().Perform();
+            
         }
-        public string GetNameProductText()
-        {
-            return namePrdct.Text;
-        }
-        public string GetCategoryText()
-        {
-            return categoryPrdct.Text;
-        }
-        public string GetSupplierText()
-        {
-            return supplierPrdct.Text;
-        }
-        public string GetUnitPriceText()
-        {
-            return unitPricePrdct.Text;
-        }
-        public string GetQuantityPerUnitText()
-        {
-            return quantityPrdct.Text;
-        }
-        public string GetUnitInStockText()
-        {
-            return unitInStockPrdct.Text;
-        }
-        public string GetUnitsOnOrderText()
-        {
-            return unitsOnOrderPrdct.Text;
-        }
-        public string GetReorderLevelText()
-        {
-            return reorderLevelPrdct.Text;
-        }
-        public string GetDiscontinuedText()
-        {
-            return discontPrdct.Text;
-        }
-
+        
     }
 }

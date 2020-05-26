@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -28,7 +29,8 @@ namespace NUnitTest_Kumaneva
 
         public StartPage LogoutCheck()
         {
-            LogoutButton.Click();
+            new Actions(driver).Click(LogoutButton).Build().Perform();
+
             return new StartPage(driver);
         }
 

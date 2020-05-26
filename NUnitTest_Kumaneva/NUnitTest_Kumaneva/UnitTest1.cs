@@ -12,6 +12,7 @@ namespace NUnitTest_Kumaneva
         private CreateProductPage createProductPage;
         private StartPage startPage;
         private HomePage homePage;
+        private AllProductsPage checkNewProduct;
         private const string nameProduct = "Kukuruku";
         private const string costUnitPrice = "123";
         private const string numberQuantityPerUnit = "5-10";
@@ -51,17 +52,18 @@ namespace NUnitTest_Kumaneva
             
             //заполнение полей нового продукта
             createProductPage.InputProduct(nameProduct, costUnitPrice, numberQuantityPerUnit, numberUnitsInStock, numberUnitsOnOrder, numberReorderLevel);
-            
+
             //ѕроверка корректности полей созданного продукта
-            Assert.AreEqual("Kukuruku", createProductPage.GetNameProductText());
-            Assert.AreEqual("Confections", createProductPage.GetCategoryText());
-            Assert.AreEqual("Pasta Buttini s.r.l.", createProductPage.GetSupplierText());
-            Assert.AreEqual("5-10", createProductPage.GetQuantityPerUnitText());
-            Assert.AreEqual("123,0000", createProductPage.GetUnitPriceText());
-            Assert.AreEqual("6", createProductPage.GetUnitInStockText());
-            Assert.AreEqual("2", createProductPage.GetUnitsOnOrderText());
-            Assert.AreEqual("10", createProductPage.GetReorderLevelText());
-            Assert.AreEqual("True", createProductPage.GetDiscontinuedText());
+            checkNewProduct = new AllProductsPage(driver);
+            Assert.AreEqual("Kukuruku", checkNewProduct.GetNameProductText(nameProduct));
+            Assert.AreEqual("Confections", checkNewProduct.GetCategoryText(nameProduct));
+            Assert.AreEqual("Pasta Buttini s.r.l.", checkNewProduct.GetSupplierText(nameProduct));
+            Assert.AreEqual("5-10", checkNewProduct.GetQuantityPerUnitText(nameProduct));
+            Assert.AreEqual("123,0000", checkNewProduct.GetUnitPriceText(nameProduct));
+            Assert.AreEqual("6", checkNewProduct.GetUnitInStockText(nameProduct));
+            Assert.AreEqual("2", checkNewProduct.GetUnitsOnOrderText(nameProduct));
+            Assert.AreEqual("10", checkNewProduct.GetReorderLevelText(nameProduct));
+            Assert.AreEqual("True", checkNewProduct.GetDiscontinuedText(nameProduct));
         }
 
         [Test]
