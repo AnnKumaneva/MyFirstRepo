@@ -6,23 +6,22 @@ namespace NUnitTest_Kumaneva.business_object
 {
     class Products
     {
-        public string productName { get; set; }
-        public string unitPrice { get; set; }
-        public string quantityPerUnit { get; set; }
-        public string unitsInStock { get; set; }
-        public string unitsOnOrder { get; set; }
-        public string reorderLevel { get; set; }
+        public string nameProduct { get; set; }
+        public string costUnitPrice { get; set; }
+        public string numberQuantityPerUnit { get; set; }
+        public string numberUnitsInStock { get; set; }
+        public string numberUnitsOnOrder { get; set; }
+        public string numberReorderLevel { get; set; }
 
-        public Products (string productName, string unitPrice, string quantityPerUnit, string unitsInStock, string unitsOnOrder, string reorderLevel)
+        public Products (string nameProduct, string costUnitPrice, string numberQuantityPerUnit, string numberUnitsInStock, string numberUnitsOnOrder,  string numberReorderLevel)
         {
-            this.productName = productName;
-            this.unitPrice = unitPrice;
-            this.quantityPerUnit = quantityPerUnit;
-            this.unitsInStock = unitsInStock;
-            this.unitsOnOrder = unitsOnOrder;
-            this.reorderLevel = reorderLevel;
+            this.nameProduct = nameProduct;
+            this.costUnitPrice = costUnitPrice;
+            this.numberQuantityPerUnit = numberQuantityPerUnit;
+            this.numberUnitsInStock = numberUnitsInStock;
+            this.numberUnitsOnOrder = numberUnitsOnOrder;
+            this.numberReorderLevel = numberReorderLevel;
         }
-
 
     }
 }

@@ -1,5 +1,4 @@
-﻿using NUnitTest_Kumaneva.business_object;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -18,29 +17,30 @@ namespace NUnitTest_Kumaneva
 
         private string NameCreateProduct;
 
-       
-        private IWebElement nameProduct => driver.FindElement(By.XPath($"//td[contains(a, \"{NameCreateProduct}\")]/a"));
+        
+        private IWebElement namePRoduct => driver.FindElement(By.XPath($"//td[contains(a,\"{NameCreateProduct}\")]/a"));
+        
 
-        private IWebElement categoryProduct => driver.FindElement(By.XPath($"//td[contains(a, \"{NameCreateProduct}\")]/following-sibling::td[1]"));
+        private IWebElement categoryProduct => driver.FindElement(By.XPath($"//td[contains(a,\"{NameCreateProduct}\")]/following-sibling::td[1]"));
 
-        private IWebElement supplierProduct => driver.FindElement(By.XPath($"//td[contains(a, \"{NameCreateProduct}\")]/following-sibling::td[2]"));
+        private IWebElement supplierProduct => driver.FindElement(By.XPath($"//td[contains(a,\"{NameCreateProduct}\")]/following-sibling::td[2]"));
 
-        private IWebElement unitPriceProduct => driver.FindElement(By.XPath($"//td[contains(a, \"{NameCreateProduct}\")]/following-sibling::td[4]"));
+        private IWebElement unitPriceProduct => driver.FindElement(By.XPath($"//td[contains(a,\"{NameCreateProduct}\")]/following-sibling::td[4]"));
 
-        private IWebElement quantityProduct => driver.FindElement(By.XPath($"//td[contains(a, \"{NameCreateProduct}\")]/following-sibling::td[3]"));
+        private IWebElement quantityProduct => driver.FindElement(By.XPath($"//td[contains(a,\"{NameCreateProduct}\")]/following-sibling::td[3]"));
 
-        private IWebElement unitInStockProduct => driver.FindElement(By.XPath($"//td[contains(a, \"{NameCreateProduct}\")]/following-sibling::td[5]"));
+        private IWebElement unitInStockProduct => driver.FindElement(By.XPath($"//td[contains(a,\"{NameCreateProduct}\")]/following-sibling::td[5]"));
 
-        private IWebElement unitsOnOrderProduct => driver.FindElement(By.XPath($"//td[contains(a, \"{NameCreateProduct}\")]/following-sibling::td[6]"));
+        private IWebElement unitsOnOrderProduct => driver.FindElement(By.XPath($"//td[contains(a,\"{NameCreateProduct}\")]/following-sibling::td[6]"));
 
-        private IWebElement reorderLevelProduct => driver.FindElement(By.XPath($"//td[contains(a, \"{NameCreateProduct}\")]/following-sibling::td[7]"));
+        private IWebElement reorderLevelProduct => driver.FindElement(By.XPath($"//td[contains(a,\"{NameCreateProduct}\")]/following-sibling::td[7]"));
 
-        private IWebElement discontProduct => driver.FindElement(By.XPath($"//td[contains(a, \"{NameCreateProduct}\")]/following-sibling::td[8]"));
+        private IWebElement discontProduct => driver.FindElement(By.XPath($"//td[contains(a,\"{NameCreateProduct}\")]/following-sibling::td[8]"));
 
         public string GetNameProductText(string NameCreateProduct)
         {
             this.NameCreateProduct = NameCreateProduct;
-            return nameProduct.Text;
+            return namePRoduct.Text;
         }
         public string GetCategoryText(string NameCreateProduct)
         {

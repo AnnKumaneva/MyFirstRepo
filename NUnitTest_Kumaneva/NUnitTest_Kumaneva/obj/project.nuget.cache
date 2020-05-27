@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FR1E8bB00OMHZBhA6qQqTmnz8qIyQTdfwYHCNQ3XI1UM7vkWiPKIjni2dg44hTF4zh16JF5oVYRhZCJgq6vGpQ==",
+  "dgSpecHash": "AoFGYhDsrldUustpZEv7h5+4EDfNkIJQp9Giq3uk7e6hpbefQwM2zwjOegcXYTfD1BKLCC9wv0R+uP1InsVJ+w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Пользователь\\source\\repos\\NUnitTest_Kumaneva\\NUnitTest_Kumaneva\\NUnitTest_Kumaneva.csproj",
+  "projectFilePath": "C:\\Users\\Пользователь\\kumaneva\\NUnitTest_Kumaneva\\NUnitTest_Kumaneva\\NUnitTest_Kumaneva.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Пользователь\\.nuget\\packages\\dotnetseleniumextras.pageobjects\\3.11.0\\dotnetseleniumextras.pageobjects.3.11.0.nupkg.sha512",
     "C:\\Users\\Пользователь\\.nuget\\packages\\dotnetseleniumextras.pageobjects.core\\4.0.0-alpha05\\dotnetseleniumextras.pageobjects.core.4.0.0-alpha05.nupkg.sha512",

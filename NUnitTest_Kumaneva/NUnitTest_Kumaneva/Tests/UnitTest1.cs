@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using NUnitTest_Kumaneva.business_object;
+using NUnitTest_Kumaneva.service.UI;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
@@ -13,20 +14,11 @@ namespace NUnitTest_Kumaneva
         private CreateProductPage createProductPage;
         private StartPage startPage;
         private HomePage homePage;
-        private AllProductsPage checkNewProduct;
-        //private const string nameProduct = "Kukuruku";
-        //private const string costUnitPrice = "123";
-        //private const string numberQuantityPerUnit = "5-10";
-        //private const string numberUnitsInStock = "6";
-        //private const string numberUnitsOnOrder = "2";
-        //private const string numberReorderLevel = "10";
+        private AllProductsPage allProductsPage;
+        
         private const string loginName = "user";
         private const string password = "user";
-        private Products newProduct = new Products("Kukuruku", "123,0000", "5-10", "6", "2", "10");
-
-        private string nameProduct => newProduct.productName;
-        //= "Kukuruku";
-        //=> newProduct.productName;
+        private Products newProduct = new Products("Kukuruku", "123.0000", "5-10", "6", "2", "10");
 
 
         [SetUp]
@@ -53,23 +45,19 @@ namespace NUnitTest_Kumaneva
 
         [Test]
         public void TestCreateProduct()
-        {            
-            createProductPage = homePage.AllProductView();
-            
-            //заполнение полей нового продукта
-            createProductPage.InputProduct(newProduct, newProduct, newProduct, newProduct, newProduct, newProduct);
+        {
 
-            //ѕроверка корректности полей созданного продукта
-            checkNewProduct = new AllProductsPage(driver);
-            Assert.AreEqual(newProduct.productName, checkNewProduct.GetNameProductText(nameProduct));
-            Assert.AreEqual("Confections", checkNewProduct.GetCategoryText(nameProduct));
-            Assert.AreEqual("Pasta Buttini s.r.l.", checkNewProduct.GetSupplierText(nameProduct));
-            Assert.AreEqual(newProduct.quantityPerUnit, checkNewProduct.GetQuantityPerUnitText(nameProduct));
-            Assert.AreEqual(newProduct.unitPrice, checkNewProduct.GetUnitPriceText(nameProduct));
-            Assert.AreEqual(newProduct.unitsInStock, checkNewProduct.GetUnitInStockText(nameProduct));
-            Assert.AreEqual(newProduct.unitsOnOrder, checkNewProduct.GetUnitsOnOrderText(nameProduct));
-            Assert.AreEqual(newProduct.reorderLevel, checkNewProduct.GetReorderLevelText(nameProduct));
-            Assert.AreEqual("True", checkNewProduct.GetDiscontinuedText(nameProduct));
+            allProductsPage = ProductService.CreateProduct(newProduct, driver);
+
+            Assert.AreEqual("Kukuruku", allProductsPage.GetNameProductText(newProduct.nameProduct));
+            Assert.AreEqual("Confections", allProductsPage.GetCategoryText(newProduct.nameProduct));
+            Assert.AreEqual("Pasta Buttini s.r.l.", allProductsPage.GetSupplierText(newProduct.nameProduct));
+            Assert.AreEqual("5-10", allProductsPage.GetQuantityPerUnitText(newProduct.nameProduct));
+            Assert.AreEqual("123,0000", allProductsPage.GetUnitPriceText(newProduct.nameProduct));
+            Assert.AreEqual("6", allProductsPage.GetUnitInStockText(newProduct.nameProduct));
+            Assert.AreEqual("2", allProductsPage.GetUnitsOnOrderText(newProduct.nameProduct));
+            Assert.AreEqual("10", allProductsPage.GetReorderLevelText(newProduct.nameProduct));
+            Assert.AreEqual("True", allProductsPage.GetDiscontinuedText(newProduct.nameProduct));
         }
 
         [Test]
