@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -17,7 +18,8 @@ namespace NUnitTest_Kumaneva
 
         private string NameCreateProduct;
 
-        
+        private IWebElement CreateNewProductButton => driver.FindElement(By.XPath("//a[@class=\"btn btn-default\"]"));
+
         private IWebElement namePRoduct => driver.FindElement(By.XPath($"//td[contains(a,\"{NameCreateProduct}\")]/a"));
         
 
@@ -37,6 +39,12 @@ namespace NUnitTest_Kumaneva
 
         private IWebElement discontProduct => driver.FindElement(By.XPath($"//td[contains(a,\"{NameCreateProduct}\")]/following-sibling::td[8]"));
 
+        public CreateProductPage createButtonClick()
+        {
+            new Actions(driver).Click(CreateNewProductButton).Build().Perform();
+            return new CreateProductPage(driver);
+        }
+        
         public string GetNameProductText(string NameCreateProduct)
         {
             this.NameCreateProduct = NameCreateProduct;

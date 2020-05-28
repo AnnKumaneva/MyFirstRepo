@@ -21,10 +21,10 @@ namespace NUnitTest_Kumaneva
 
         private IWebElement textLabel => driver.FindElement(By.XPath("//h2"));
 
-        public CreateProductPage AllProductView()
+        public AllProductsPage AllProductView()
         {
             AllProductsButton.Click();
-            return new CreateProductPage(driver);
+            return new AllProductsPage(driver);
         }
 
         public StartPage LogoutCheck()

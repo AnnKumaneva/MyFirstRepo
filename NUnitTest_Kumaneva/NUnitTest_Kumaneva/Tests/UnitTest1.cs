@@ -18,7 +18,7 @@ namespace NUnitTest_Kumaneva
         
         private const string loginName = "user";
         private const string password = "user";
-        private Products newProduct = new Products("Kukuruku", "123.0000", "5-10", "6", "2", "10");
+        private Products newProduct = new Products("Kukuruku", "123", "5-10", "6", "2", "10");
 
 
         [SetUp]
@@ -48,7 +48,7 @@ namespace NUnitTest_Kumaneva
         {
 
             allProductsPage = ProductService.CreateProduct(newProduct, driver);
-
+            
             Assert.AreEqual("Kukuruku", allProductsPage.GetNameProductText(newProduct.nameProduct));
             Assert.AreEqual("Confections", allProductsPage.GetCategoryText(newProduct.nameProduct));
             Assert.AreEqual("Pasta Buttini s.r.l.", allProductsPage.GetSupplierText(newProduct.nameProduct));

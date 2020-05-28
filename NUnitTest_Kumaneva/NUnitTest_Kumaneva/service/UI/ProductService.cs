@@ -11,8 +11,8 @@ namespace NUnitTest_Kumaneva.service.UI
         public static AllProductsPage CreateProduct(Products product, IWebDriver driver)
         {
             HomePage homePage = new HomePage(driver);
-            CreateProductPage createProductPage = homePage.AllProductView();
-            AllProductsPage allProductsPage = new AllProductsPage(driver);
+            AllProductsPage allProductsPage = homePage.AllProductView();           
+            CreateProductPage createProductPage = allProductsPage.createButtonClick();
             allProductsPage = createProductPage.InputProduct(product);
             return new AllProductsPage(driver);
         }

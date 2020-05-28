@@ -16,9 +16,7 @@ namespace NUnitTest_Kumaneva
             this.driver = driver;
         }
 
-        private IWebElement CreateNewProductButton => driver.FindElement(By.XPath("//a[@class=\"btn btn-default\"]"));
-
-
+        
         private IWebElement ProductNameInput => driver.FindElement(By.XPath("//input[contains(@id,\"ProductName\")]"));
 
         private IWebElement CategoryName => driver.FindElement(By.XPath("//select[contains(@id,\"CategoryId\")]")).FindElement(By.XPath("//select[contains(@id,\"CategoryId\")]/option[@value=\"3\"]"));
@@ -45,7 +43,7 @@ namespace NUnitTest_Kumaneva
 
         public AllProductsPage InputProduct(Products product)
         {
-            new Actions(driver).Click(CreateNewProductButton).Build().Perform();
+            
             
             ProductNameInput.SendKeys(product.nameProduct);
             CategoryName.Click();
@@ -56,8 +54,8 @@ namespace NUnitTest_Kumaneva
             UnitsOnOrderNumber.SendKeys(product.numberUnitsOnOrder);
             ReorderLevelNumber.SendKeys(product.numberReorderLevel);
             DiscontinuedTrue.Click();
-
             new Actions(driver).Click(CreateButton).Build().Perform();
+            
 
             return new AllProductsPage(driver);
             
