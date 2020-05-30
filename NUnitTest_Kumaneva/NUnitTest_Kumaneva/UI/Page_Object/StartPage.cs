@@ -21,15 +21,25 @@ namespace NUnitTest_Kumaneva
 
         private IWebElement startPageText => driver.FindElement(By.XPath("//h2"));
 
-        public HomePage LoginInput(string loginNameInput, string passwordInput)
+        public StartPage NameLoginInput(string loginNameInput)
         {
-            LoginNameInput.SendKeys(loginNameInput);
-            PasswordInput.SendKeys(passwordInput);
+            LoginNameInput.SendKeys(loginNameInput);          
+            return this;            
+        }
+
+        public StartPage LoginPaswordInput(string passwordInput)
+        {            
+            PasswordInput.SendKeys(passwordInput);            
+            return this;
+        }
+
+        public HomePage SendButtonClick()
+        {
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1);
             LoginButton.Click();
             return new HomePage(driver);
-            
         }
+
 
         public string GetStartPageText()
         {

@@ -41,24 +41,35 @@ namespace NUnitTest_Kumaneva
 
         
 
-        public AllProductsPage InputProduct(Products product)
+        public CreateProductPage InputProduct(Products product)
         {
             
             
             ProductNameInput.SendKeys(product.nameProduct);
-            CategoryName.Click();
-            SupplierName.Click();
+            
             UnitPriceCost.SendKeys(product.costUnitPrice);
             QuantityPerUnitNumber.SendKeys(product.numberQuantityPerUnit);
             UnitsInStockNumber.SendKeys(product.numberUnitsInStock);
             UnitsOnOrderNumber.SendKeys(product.numberUnitsOnOrder);
             ReorderLevelNumber.SendKeys(product.numberReorderLevel);
             DiscontinuedTrue.Click();
-            new Actions(driver).Click(CreateButton).Build().Perform();
             
+            return this;
+            
+        }
 
+        
+        public CreateProductPage CategorySupplierClick()
+        {
+            CategoryName.Click();
+            SupplierName.Click();
+            return this;
+        }
+
+        public AllProductsPage ClickCreateButton()
+        {
+            new Actions(driver).Click(CreateButton).Build().Perform();
             return new AllProductsPage(driver);
-            
         }
         
     }

@@ -13,7 +13,8 @@ namespace NUnitTest_Kumaneva.service.UI
             HomePage homePage = new HomePage(driver);
             AllProductsPage allProductsPage = homePage.AllProductView();           
             CreateProductPage createProductPage = allProductsPage.createButtonClick();
-            allProductsPage = createProductPage.InputProduct(product);
+            createProductPage = createProductPage.InputProduct(product);
+            allProductsPage = createProductPage.ClickCreateButton();
             return new AllProductsPage(driver);
         }
 
