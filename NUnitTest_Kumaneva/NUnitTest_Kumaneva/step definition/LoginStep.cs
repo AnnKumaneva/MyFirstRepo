@@ -41,10 +41,10 @@ namespace NUnitTest_Kumaneva.step_definition
             new StartPage(driver).SendButtonClick();            
         }
 
-        [Then(@"Home page should be open")]
-        public void ThenHomePageShouldBeOpen()
+        [Then(@"""(.*)"" should be open")]
+        public void ThenHomePageShouldBeOpen(string namePage)
         {           
-            Assert.AreEqual("Home page", new HomePage(driver).GetText());
+            Assert.AreEqual(namePage, new HomePage(driver).GetText());
         }
     }
 }

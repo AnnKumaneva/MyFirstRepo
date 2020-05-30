@@ -12,6 +12,6 @@ Scenario: Create New Product
 	And I click on the AllProducts-button
 	And I click on the CreateNew-button
 	And I enter the product data in the field: NameProduct "Kukuruku", UnitPrice "123", QuantityPerUnit "5-10", UnitInStock "6", UnitsOnOrder "2", ReorderLevel "10"
-	And I select the values of the category and supplier fields
+	And I select category "3" and supplier "26" in fields
 	When I click on the CreateProduct-button
 	Then I see product "Kukuruku" in the table All Product

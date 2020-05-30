@@ -16,13 +16,14 @@ namespace NUnitTest_Kumaneva
             this.driver = driver;
         }
 
-        
+        int numberCategory;
+        int numberSupplier;
         private IWebElement ProductNameInput => driver.FindElement(By.XPath("//input[contains(@id,\"ProductName\")]"));
 
-        private IWebElement CategoryName => driver.FindElement(By.XPath("//select[contains(@id,\"CategoryId\")]")).FindElement(By.XPath("//select[contains(@id,\"CategoryId\")]/option[@value=\"3\"]"));
+        private IWebElement CategoryName => driver.FindElement(By.XPath("//select[contains(@id,\"CategoryId\")]")).FindElement(By.XPath($"//select[contains(@id,\"CategoryId\")]/option[@value=\"{numberCategory}\"]"));
 
 
-        private IWebElement SupplierName => driver.FindElement(By.XPath("//select[contains(@id,\"SupplierId\")]")).FindElement(By.XPath("//select[contains(@id,\"SupplierId\")]/option[@value=\"26\"]"));
+        private IWebElement SupplierName => driver.FindElement(By.XPath("//select[contains(@id,\"SupplierId\")]")).FindElement(By.XPath($"//select[contains(@id,\"SupplierId\")]/option[@value=\"{numberSupplier}\"]"));
 
         private IWebElement UnitPriceCost => driver.FindElement(By.XPath("//input[contains(@id,\"UnitPrice\")] "));
 
@@ -59,9 +60,12 @@ namespace NUnitTest_Kumaneva
         }
 
         
-        public CreateProductPage CategorySupplierClick()
+        public CreateProductPage CategorySupplierClick(int numberCategory, int numberSupplier)
         {
+            this.numberCategory = numberCategory;            
             CategoryName.Click();
+
+            this.numberSupplier = numberSupplier;
             SupplierName.Click();
             return this;
         }

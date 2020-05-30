@@ -9,4 +9,4 @@ Scenario: Login to App
 	When I enter "user" in the Name-field
 	And I enter "user" in the Password-field
 	And I click on the Send-button
-	Then Home page should be open
+	Then "Home page" should be open

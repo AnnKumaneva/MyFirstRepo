@@ -64,10 +64,10 @@ namespace NUnitTest_Kumaneva.step_definition
           
         }
 
-        [When(@"I select the values of the category and supplier fields")]
-        public void WhenISelectTheValueOfTheCategoryAndSupplierFields()
+        [When(@"I select category ""(.*)"" and supplier ""(.*)"" in fields")]
+        public void WhenISelectTCategoryAndSupplierInFields(int numberCategory, int numberSupplier)
         {
-            new CreateProductPage(driver).CategorySupplierClick();
+            new CreateProductPage(driver).CategorySupplierClick(numberCategory, numberSupplier);
         }
 
         [When(@"I click on the CreateProduct-button")]
@@ -81,14 +81,7 @@ namespace NUnitTest_Kumaneva.step_definition
             AllProductsPage allProductsPage = new AllProductsPage(driver);            
 
             Assert.AreEqual("Kukuruku", allProductsPage.GetNameProductText(nameProduct));
-            Assert.AreEqual("Confections", allProductsPage.GetCategoryText(nameProduct));
-            Assert.AreEqual("Pasta Buttini s.r.l.", allProductsPage.GetSupplierText(nameProduct));
-            Assert.AreEqual("5-10", allProductsPage.GetQuantityPerUnitText(nameProduct));
-            Assert.AreEqual("123,0000", allProductsPage.GetUnitPriceText(nameProduct));
-            Assert.AreEqual("6", allProductsPage.GetUnitInStockText(nameProduct));
-            Assert.AreEqual("2", allProductsPage.GetUnitsOnOrderText(nameProduct));
-            Assert.AreEqual("10", allProductsPage.GetReorderLevelText(nameProduct));
-            Assert.AreEqual("True", allProductsPage.GetDiscontinuedText(nameProduct));
+            
         }
 
 

@@ -123,7 +123,7 @@ this.ScenarioInitialize(scenarioInfo);
                         "uantityPerUnit \"5-10\", UnitInStock \"6\", UnitsOnOrder \"2\", ReorderLevel \"10\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 15
- testRunner.And("I select the values of the category and supplier fields", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I select category \"3\" and supplier \"26\" in fields", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 16
  testRunner.When("I click on the CreateProduct-button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
